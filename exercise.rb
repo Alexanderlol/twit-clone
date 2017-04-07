@@ -96,14 +96,3 @@ ex = User.new
 ex.name = "alex"
 ex.email = "alex@email.com"
 puts ex.formatted_email
-
-
-
-
-
-
-
-
-
-
-
