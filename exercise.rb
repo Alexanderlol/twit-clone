@@ -52,6 +52,55 @@ hash1 = { name: "alex", email: "alex@example.com", password: ('a'..'z').to_a.shu
 
 puts hash1
 
+=begin
+-----------------------
+CONSTRUCTOR EXERCISES
+-----------------------
+=end
+
+r0 = (1..10)
+r1 = Range.new(1,10)
+puts r0.to_a
+puts r1.to_a
+puts r0 == r1
+
+puts Range.superclass
+puts Range.superclass.superclass
+puts Hash.superclass
+puts Hash.superclass.superclass
+puts Symbol.superclass
+puts Symbol.superclass.superclass
+
+class Word < String
+	def palindrome?
+		self == reverse
+	end
+end
+s = Word.new("level")
+puts s.palindrome?
+
+class User
+	attr_accessor :name, :email
+
+	def initialize(attributes = {})
+		@name = attributes[:name]
+		@email = attributes[:email]
+	end
+
+	def formatted_email
+		"#{@name} <#{@email}>"
+	end
+end
+
+ex = User.new
+ex.name = "alex"
+ex.email = "alex@email.com"
+puts ex.formatted_email
+
+
+
+
+
 
 
 
