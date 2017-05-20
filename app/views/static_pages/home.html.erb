@@ -1,8 +1,20 @@
-<div class="center jumbotron">
-	<h1>Twitter Clone</h1>
-	<p>Twit Clone Home page content here</p>
+<% if logged_in? %>
+	<div class="row">
+		<aside class="col-md-4">
+			<section class="user-info">
+				<%= render 'shared/user_info' %>
+			</section>
+			<section class="micropost_form">
+				<%= render 'shared/micropost_form' %>
+ 			</section>
+ 		</aside>
+ 	</div>
+<% else %>
+	<div class="center jumbotron">
+		<h1>Twitter Clone</h1>
+		<p>Twit Clone Home page content here</p>
 
-	<%= link_to "Sign Up!", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+		<%= link_to "Sign Up!", signup_path, class: "btn btn-lg btn-primary" %>
+	</div>
+<% end %>
 
-<!-- <%= link_to image_tag("rails.png", alt: "Rails logo"), 'http://rubyonrails.org/' %> -->
